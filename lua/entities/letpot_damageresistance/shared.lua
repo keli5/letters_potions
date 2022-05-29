@@ -2,12 +2,13 @@ ENT.Type = "anim"
 ENT.Base = "base_gmodentity"
 ENT.Spawnable = true
 ENT.Category = "Letters' Drinks"
-ENT.PrintName = "Time Bomb Drink"
+ENT.PrintName = "Damage Resistance Drink"
 
 function ENT:Initialize()
-    self.PotionPotency = 1
+    self.PotionDuration = 30
+    self.PotionPotency = 2
     self:SetModel("models/mechanics/various/211.mdl")
-    self:SetColor(Color(205, 120, 0))
+    self:SetColor(Color(0, 199, 156))
     self:SetMaterial("models/shiny")
 
     self:SetMoveType( MOVETYPE_VPHYSICS )

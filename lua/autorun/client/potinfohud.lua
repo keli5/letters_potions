@@ -12,7 +12,8 @@ hook.Add("HUDPaint", "PotInfoHud", function ()
     local pot = ent.PrintName
     local durationText = ""
     local potencyText = ""
-    --
+    
+    ------
     if not ent.PotionDuration then
         durationText = "Duration: One-time"
     else
@@ -23,7 +24,8 @@ hook.Add("HUDPaint", "PotInfoHud", function ()
     else
         potencyText = "Potency: " .. ent.PotionPotency .. "x"  
     end
-    --
+    ------
+
     draw.DrawText(pot, "DermaLarge", ScrW() / 2, (ScrH() / 2) + 36, Color(255, 255, 255, 255), TEXT_ALIGN_CENTER)
     draw.DrawText(durationText, "DermaLarge", ScrW(z) / 2, (ScrH() / 2) + 72, Color(255, 255, 255, 255), TEXT_ALIGN_CENTER)
     draw.DrawText(potencyText, "DermaLarge", ScrW(z) / 2, (ScrH() / 2) + 108, Color(255, 255, 255, 255), TEXT_ALIGN_CENTER)

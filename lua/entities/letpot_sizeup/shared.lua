@@ -16,6 +16,5 @@ function ENT:Initialize()
     if ( SERVER ) then self:PhysicsInit( SOLID_VPHYSICS ) end
 
     self:PhysWake()
-    
     self:Activate()
 end

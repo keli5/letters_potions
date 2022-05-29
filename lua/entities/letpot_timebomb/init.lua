@@ -6,6 +6,7 @@ Timing = {}
 
 function ENT:Use(activator, caller, useType, value)
     Timing[activator] = 1
+    local potency = self.PotionPotency -- why do i have to do this? idk, maybe scope
     --
     self:Remove()
     --
@@ -20,7 +21,7 @@ function ENT:Use(activator, caller, useType, value)
             explode:SetPos(activator:GetPos())
             explode:SetOwner(activator)
             explode:Spawn()
-            explode:SetKeyValue("iMagnitude", 250 * activator:GetModelScale() * self.PotionPotency)
+            explode:SetKeyValue("iMagnitude", 250 * activator:GetModelScale() * potency)
             explode:Fire("Explode", 0, 0)
             activator:Kill() -- just to be sure, since the explosion doesn't always kill the player
         end
