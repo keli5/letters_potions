@@ -15,6 +15,7 @@ function ENT:Use(activator, caller, useType, value)
     self:Remove()
     --
     timer.Simple(self.PotionDuration, function()
+        if not OGVZ[activator] then return false end -- other stuff can modify this
         activator:SetModelScale(1, 0.5)
         viewOffset = activator:GetViewOffset()
         viewOffset.z = OGVZ[activator]
