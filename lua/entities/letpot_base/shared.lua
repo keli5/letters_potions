@@ -17,4 +17,5 @@ function ENT:Initialize()
 
     self:PhysWake()
     self:SetModelScale(2, 0.0001)
+    self:Activate()
 end
