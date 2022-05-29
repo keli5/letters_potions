@@ -5,7 +5,7 @@ function ENT:Use(activator, caller, useType, value)
     --
     self:Remove()
     --
-    timer.Create("Regen_" .. activator:SteamID(), 0.33, 90, function()
+    timer.Create("Regen_" .. activator:SteamID(), 0.5, 60, function()
         if activator:Health() >= activator:GetMaxHealth() then return end
         activator:SetHealth(activator:Health() + 1)
     end)
