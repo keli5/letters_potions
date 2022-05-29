@@ -5,7 +5,7 @@ ENT.Category = "Letters' Drinks"
 ENT.PrintName = "Mundane Drink"
 
 function ENT:Initialize()
-    ENT.PotionDuration = 20
+    self.PotionDuration = 20
     self:SetModel("models/mechanics/various/211.mdl")
     self:SetColor(Color(255, 255, 255))
     self:SetMaterial("models/shiny")
