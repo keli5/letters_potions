@@ -20,7 +20,7 @@ function ENT:Use(activator, caller, useType, value)
             explode:SetPos(activator:GetPos())
             explode:SetOwner(activator)
             explode:Spawn()
-            explode:SetKeyValue("iMagnitude", "250")
+            explode:SetKeyValue("iMagnitude", 250 * activator:GetModelScale())
             explode:Fire("Explode", 0, 0)
             activator:Kill() -- just to be sure, since the explosion doesn't always kill the player
         end
