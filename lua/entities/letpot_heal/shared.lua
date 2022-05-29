@@ -3,9 +3,9 @@ ENT.Base = "base_gmodentity"
 ENT.Spawnable = true
 ENT.Category = "Letters' Drinks"
 ENT.PrintName = "Heal Drink"
-ENT.PotionDuration = "30"
 
 function ENT:Initialize()
+    self.PotionPotency = 1
     self:SetModel("models/mechanics/various/211.mdl")
     self:SetColor(Color(204, 35, 71))
     self:SetMaterial("models/shiny")

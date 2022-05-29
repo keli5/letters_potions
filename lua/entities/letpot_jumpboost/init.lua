@@ -8,7 +8,7 @@ function ENT:Use(activator, caller, useType, value)
         return false
     end
     BaseJumpPower[activator] = activator:GetJumpPower()
-    activator:SetJumpPower(activator:GetJumpPower() * 1.5)
+    activator:SetJumpPower(activator:GetJumpPower() * self.PotionPotency)
     --
     self:Remove()
     --

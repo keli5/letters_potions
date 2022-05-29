@@ -8,7 +8,7 @@ function ENT:Use(activator, caller, useType, value)
         return false
     end
     BaseRunSpeed[activator] = activator:GetRunSpeed()
-    activator:SetRunSpeed(activator:GetRunSpeed() * 2)
+    activator:SetRunSpeed(activator:GetRunSpeed() * self.PotionPotency)
     --
     self:Remove()
     --

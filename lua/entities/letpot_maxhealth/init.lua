@@ -8,7 +8,7 @@ function ENT:Use(activator, caller, useType, value)
         return false
     end
     BaseMaxHealth[activator] = activator:GetMaxHealth()
-    activator:SetMaxHealth(activator:GetMaxHealth() * 2)
+    activator:SetMaxHealth(activator:GetMaxHealth() * self.PotionPotency)
     --
     self:Remove()
     --

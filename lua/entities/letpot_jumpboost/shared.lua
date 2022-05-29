@@ -6,6 +6,7 @@ ENT.PrintName = "Jumping Drink"
 
 function ENT:Initialize()
     self.PotionDuration = 30
+    self.PotionPotency = 1.5
     self:SetModel("models/mechanics/various/211.mdl")
     self:SetColor(Color(64, 195, 255))
     self:SetMaterial("models/shiny")
