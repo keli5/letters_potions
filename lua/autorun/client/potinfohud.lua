@@ -25,10 +25,19 @@ hook.Add("HUDPaint", "PotInfoHud", function ()
         potencyText = "Potency: " .. ent.PotionPotency .. "x"  
     end
     ------
-    cam.Start3D()
-    potpos = ent:WorldSpaceCenter():ToScreen()
-    cam.End3D()
+    surface.SetFont("DermaLarge")
+    tW1, _ = surface.GetTextSize(pot)
+    tW2, _= surface.GetTextSize(durationText)
+    tW3, _ = surface.GetTextSize(potencyText)
+    tW = math.max(tW1, tW2, tW3)
 
+    cam.Start3D()
+    cam.IgnoreZ(true)
+    local potpos = ent:WorldSpaceCenter():ToScreen()
+    cam.End3D()
+    local curpos = {x=ScrW()/2, y=ScrH()/2}
+
+    draw.RoundedBox(6, potpos.x - tW/1.5, potpos.y - 150, tW*1.35, 130, Color(0, 0, 0, 200))
     draw.DrawText(potencyText, "DermaLarge", potpos.x, potpos.y - 66, Color(255, 255, 255, 255), TEXT_ALIGN_CENTER)
     draw.DrawText(durationText, "DermaLarge", potpos.x, potpos.y - 102, Color(255, 255, 255, 255), TEXT_ALIGN_CENTER)
     draw.DrawText(pot, "DermaLarge", potpos.x, potpos.y - 138, Color(255, 255, 255, 255), TEXT_ALIGN_CENTER)
