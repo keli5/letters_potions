@@ -14,15 +14,15 @@ hook.Add("HUDPaint", "PotInfoHud", function ()
     local potencyText = ""
 
     ------
-    if not ent.PotionDuration then
+    if not ent:GetPotionDuration() then
         durationText = "Duration: One-time"
     else
-        durationText = "Duration: " .. ent.PotionDuration .. "s"
+        durationText = "Duration: " .. ent:GetPotionDuration() .. "s"
     end
-    if not ent.PotionPotency then
+    if not ent:GetPotionPotency() then
         potencyText = "Potency: N/A"
     else
-        potencyText = "Potency: " .. ent.PotionPotency .. "x"  
+        potencyText = "Potency: " .. ent:GetPotionPotency() .. "x"  
     end
     ------
     surface.SetFont("DermaLarge")

@@ -20,3 +20,8 @@ function ENT:Initialize()
     
     self:Activate()
 end
+
+function ENT:SetupDataTables()
+    self:NetworkVar("Int", 1, "PotionPotency")
+    self:NetworkVar("Int", 2, "PotionDuration")
+end
