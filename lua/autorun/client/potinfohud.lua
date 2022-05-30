@@ -28,8 +28,8 @@ hook.Add("HUDPaint", "PotInfoHud", function ()
     cam.Start3D()
     potpos = ent:WorldSpaceCenter():ToScreen()
     cam.End3D()
-    
-    draw.DrawText(pot, "DermaLarge", potpos.x, potpos.y + 36, Color(255, 255, 255, 255), TEXT_ALIGN_CENTER)
-    draw.DrawText(durationText, "DermaLarge", potpos.x, potpos.y + 72, Color(255, 255, 255, 255), TEXT_ALIGN_CENTER)
-    draw.DrawText(potencyText, "DermaLarge", potpos.x, potpos.y + 108, Color(255, 255, 255, 255), TEXT_ALIGN_CENTER)
+
+    draw.DrawText(potencyText, "DermaLarge", potpos.x, potpos.y - 66, Color(255, 255, 255, 255), TEXT_ALIGN_CENTER)
+    draw.DrawText(durationText, "DermaLarge", potpos.x, potpos.y - 102, Color(255, 255, 255, 255), TEXT_ALIGN_CENTER)
+    draw.DrawText(pot, "DermaLarge", potpos.x, potpos.y - 138, Color(255, 255, 255, 255), TEXT_ALIGN_CENTER)
 end)
