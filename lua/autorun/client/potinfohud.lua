@@ -7,7 +7,7 @@ hook.Add("HUDPaint", "PotInfoHud", function ()
     if trace.Fraction > 0.006 then return end
     local ent = trace.Entity
 
-    if not ent:GetClass():startswith("letpot_") then return end
+    if not ent:GetClass():startswith("letpot_pot_") then return end
 
     local pot = ent.PrintName
     local durationText = ""
