@@ -8,11 +8,11 @@ function ENT:Use(activator, caller, useType, value)
         return false
     end
     BaseJumpPower[activator] = activator:GetJumpPower()
-    activator:SetJumpPower(activator:GetJumpPower() * self.PotionPotency)
+    activator:SetJumpPower(activator:GetJumpPower() * self:GetPotionPotency())
     --
     self:Remove()
     --
-    timer.Simple(self.PotionDuration, function()
+    timer.Simple(self:GetPotionDuration(), function()
         if BaseJumpPower[activator] then
             activator:SetJumpPower(BaseJumpPower[activator])
             BaseJumpPower[activator] = nil

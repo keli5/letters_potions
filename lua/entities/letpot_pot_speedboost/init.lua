@@ -8,11 +8,11 @@ function ENT:Use(activator, caller, useType, value)
         return false
     end
     BaseRunSpeed[activator] = activator:GetRunSpeed()
-    activator:SetRunSpeed(activator:GetRunSpeed() * self.PotionPotency)
+    activator:SetRunSpeed(activator:GetRunSpeed() * self:GetPotionPotency())
     --
     self:Remove()
     --
-    timer.Simple(self.PotionDuration, function()
+    timer.Simple(self:GetPotionDuration(), function()
         if BaseRunSpeed[activator] then
             activator:SetRunSpeed(BaseRunSpeed[activator])
             BaseRunSpeed[activator] = nil

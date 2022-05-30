@@ -5,7 +5,7 @@ function ENT:Use(activator, caller, useType, value)
     --
     self:Remove()
     --
-    timer.Create("Regen_" .. activator:SteamID(), 1 / self.PotionPotency, self.PotionDuration * self.PotionPotency, function()
+    timer.Create("Regen_" .. activator:SteamID(), 1 / self:GetPotionPotency(), self:GetPotionDuration() * self:GetPotionPotency(), function()
         if activator:Health() >= activator:GetMaxHealth() then return end
         activator:SetHealth(activator:Health() + 1)
     end)

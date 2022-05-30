@@ -6,7 +6,7 @@ function ENT:Use(activator, caller, useType, value)
     --
     self:Remove()
     --
-    timer.Simple(self.PotionDuration, function()
+    timer.Simple(self:GetPotionDuration(), function()
         -- remove the potion effect
     end)
 end

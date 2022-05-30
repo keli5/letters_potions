@@ -5,8 +5,8 @@ ENT.Category = "Letters' Drinks"
 ENT.PrintName = "Regeneration Drink"
 
 function ENT:Initialize()
-    self.PotionDuration = 25
-    self.PotionPotency = 1
+    self:SetPotionPotency(1)
+    self:SetPotionDuration(30)
     self:SetModel("models/mechanics/various/211.mdl")
     self:SetColor(Color(255, 101, 219))
     self:SetMaterial("models/shiny")
@@ -17,7 +17,6 @@ function ENT:Initialize()
     if ( SERVER ) then self:PhysicsInit( SOLID_VPHYSICS ) end
 
     self:PhysWake()
-    
     self:Activate()
 end
 

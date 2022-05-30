@@ -6,11 +6,11 @@ ScaleBy = {}
 function ENT:Use(activator, caller, useType, value)
     if ScaleBy[activator] then return false end
     if not activator:IsPlayer() then return false end
-    ScaleBy[activator] = self.PotionPotency
+    ScaleBy[activator] = self:GetPotionPotency()
     --
     self:Remove()
     --
-    timer.Simple(self.PotionDuration, function()
+    timer.Simple(self:GetPotionDuration(), function()
         if ScaleBy[activator] then ScaleBy[activator] = nil end
     end)
 end

@@ -14,12 +14,12 @@ hook.Add("HUDPaint", "PotInfoHud", function ()
     local potencyText = ""
 
     ------
-    if not ent:GetPotionDuration() then
+    if ent:GetPotionDuration() == -1 then
         durationText = "Duration: One-time"
     else
         durationText = "Duration: " .. ent:GetPotionDuration() .. "s"
     end
-    if not ent:GetPotionPotency() then
+    if ent:GetPotionPotency() == -1 then
         potencyText = "Potency: N/A"
     else
         potencyText = "Potency: " .. ent:GetPotionPotency() .. "x"  

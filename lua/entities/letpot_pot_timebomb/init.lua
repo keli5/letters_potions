@@ -7,7 +7,7 @@ Timing = {}
 function ENT:Use(activator, caller, useType, value)
     if Timing[activator] then return false end
     Timing[activator] = 1
-    local potency = self.PotionPotency -- why do i have to do this? idk, maybe scope
+    local potency = self:GetPotionPotency() -- why do i have to do this? idk, maybe scope
     --
     self:Remove()
     --

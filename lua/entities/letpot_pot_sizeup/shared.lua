@@ -5,7 +5,8 @@ ENT.Category = "Letters' Drinks"
 ENT.PrintName = "Growing Drink"
 
 function ENT:Initialize()
-    self.PotionDuration = 30
+    self:SetPotionPotency(-1)
+    self:SetPotionDuration(30)
     self:SetModel("models/mechanics/various/211.mdl")
     self:SetColor(Color(198, 255, 114))
     self:SetMaterial("models/shiny")
@@ -20,5 +21,6 @@ function ENT:Initialize()
 end
 
 function ENT:SetupDataTables()
-    self:NetworkVar("Int", 1, "PotionDuration")
+    self:NetworkVar("Int", 1, "PotionPotency")
+    self:NetworkVar("Int", 2, "PotionDuration")
 end
