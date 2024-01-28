@@ -11,6 +11,6 @@ function ENT:Use(activator, caller, useType, value)
     end)
 end
 
-hook.Add("DoPlayerDeath", "ResetRunSpeed", function(ply, attacker, dmginfo)
+hook.Add("DoPlayerDeath", "ResetRegenSpeed", function(ply, attacker, dmginfo)
     timer.Remove("Regen_" .. ply:SteamID())
 end)

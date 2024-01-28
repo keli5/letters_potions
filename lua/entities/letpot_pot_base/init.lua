@@ -10,3 +10,7 @@ function ENT:Use(activator, caller, useType, value)
         -- remove the potion effect
     end)
 end
+
+hook.Add("DoPlayerDeath", "ResetPotEffect", function(ply, attacker, dmginfo)
+    -- do such
+end)

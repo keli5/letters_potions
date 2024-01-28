@@ -15,7 +15,7 @@ function ENT:Use(activator, caller, useType, value)
     end)
 end
 
-hook.Add("DoPlayerDeath", "ResetRunSpeed", function(ply, attacker, dmginfo)
+hook.Add("DoPlayerDeath", "ResetDmgResistance", function(ply, attacker, dmginfo)
     if ScaleBy[ply] then ScaleBy[ply] = nil end
 end)
 

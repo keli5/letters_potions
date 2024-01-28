@@ -1,3 +1,4 @@
+ENT.Editable = true
 ENT.Type = "anim"
 ENT.Base = "base_gmodentity"
 ENT.Spawnable = true
@@ -21,6 +22,24 @@ function ENT:Initialize()
 end
 
 function ENT:SetupDataTables()
-    self:NetworkVar("Int", 1, "PotionPotency")
-    self:NetworkVar("Int", 2, "PotionDuration")
+    self:NetworkVar("Int", 1, "PotionPotency", {
+        KeyName = "potency",
+        Edit = {
+            title = "Effect strength multiplier",
+            type = "Int",
+            order = 1,
+            min = 1,
+            max = 10
+        }
+    })
+    self:NetworkVar("Int", 2, "PotionDuration", {
+        KeyName = "duration",
+        Edit = {
+            title = "Potion duration (sec)",
+            type = "Int",
+            order = 1,
+            min = -1,
+            max = 600
+        }
+    })
 end
